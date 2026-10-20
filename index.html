@@ -4,489 +4,467 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#f8ecd9">
-<title>Кымбат 60 жаш</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#f8eee3">
+<title>Кымбаттын 60 жаш мааракеси</title>
 
 <style>
-*{box-sizing:border-box}
-:root{
-  --cream:#f8ecd9;
-  --ivory:#fffaf2;
-  --gold:#c6a15e;
-  --dark-gold:#92703d;
-  --brown:#5f4931;
+* {
+  box-sizing: border-box;
 }
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:var(--cream);
-  color:var(--brown);
-  font-family:"Cormorant Garamond",Georgia,serif;
+
+html {
+  scroll-behavior: smooth;
 }
-button{font:inherit;cursor:pointer}
-[hidden]{display:none!important}
+
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: #482b2b;
+  background: #fff8ef;
+}
+
+button {
+  font: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+/* БИРИНЧИ ЭКРАН */
+.cover {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, #fffdf9, #f2dfc9 72%, #e4c4a0);
+  overflow: hidden;
+}
+
+.cover-content {
+  width: 100%;
+  max-width: 430px;
+}
+
+.eyebrow {
+  font: 11px Arial, sans-serif;
+  letter-spacing: 3px;
+  color: #936b46;
+  text-transform: uppercase;
+}
+
+.cover-title {
+  font-size: 29px;
+  font-weight: normal;
+  color: #79283b;
+  margin: 18px 0 6px;
+}
+
+.cover-subtitle {
+  font-size: 15px;
+  color: #856448;
+  margin-bottom: 35px;
+}
 
 /* КОНВЕРТ */
-.envelope-screen{
-  min-height:100vh;
-  min-height:100svh;
-  padding:20px 15px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:
-    radial-gradient(ellipse,#fffdf8,transparent 70%),
-    linear-gradient(135deg,#f3e2c7,#fff8ed,#efdfc4);
-}
-.envelope-button{
-  position:relative;
-  display:block;
-  width:min(100%,440px);
-  padding:0;
-  border:0;
-  background:transparent;
-  filter:drop-shadow(0 18px 28px #76552a30);
-  transition:transform .4s;
-}
-.envelope-button:hover{transform:translateY(-4px)}
-.envelope-button img{
-  display:block;
-  width:100%;
-  max-height:75svh;
-  object-fit:contain;
-}
-.open-label{
-  position:absolute;
-  bottom:7%;
-  left:50%;
-  transform:translateX(-50%);
-  padding:12px 20px;
-  border:1px solid var(--gold);
-  border-radius:30px;
-  background:#fffaf2ee;
-  color:var(--dark-gold);
-  white-space:nowrap;
-  font:11px Arial,sans-serif;
-  letter-spacing:2px;
-}
-.envelope-note{
-  color:#8d7049;
-  font-size:18px;
-  font-style:italic;
+.envelope-button {
+  position: relative;
+  display: block;
+  width: min(330px, 85vw);
+  height: 220px;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid #c59b5c;
+  border-radius: 4px;
+  background: #ead2b2;
+  box-shadow: 0 18px 45px #6a43272b;
+  cursor: pointer;
+  perspective: 900px;
+  overflow: visible;
 }
 
-/* НЕГИЗГИ ЧАКЫРУУ */
-#invitation{animation:fadeIn 1s ease}
-.hero{
-  min-height:100svh;
-  padding:30px 18px;
-  display:grid;
-  place-items:center;
-  background:
-    linear-gradient(#fffaf2aa,#fffaf2c9),
-    url("assets/invitation-60.jpg") center/cover no-repeat;
-}
-.invitation-card{
-  position:relative;
-  width:min(100%,540px);
-  padding:55px 25px;
-  text-align:center;
-  background:#fffaf2ed;
-  border:1px solid var(--gold);
-  outline:1px solid #d6bd8b;
-  outline-offset:6px;
-  box-shadow:0 18px 55px #5c401b20;
-}
-.invitation-card:before,
-.invitation-card:after{
-  content:"❧";
-  position:absolute;
-  color:var(--gold);
-  font-size:32px;
-}
-.invitation-card:before{top:8px;left:12px}
-.invitation-card:after{bottom:8px;right:12px;transform:rotate(180deg)}
-.eyebrow{
-  color:var(--dark-gold);
-  font:10px/1.8 Arial,sans-serif;
-  letter-spacing:3px;
-}
-.name{
-  margin:18px 0 0;
-  color:#a98243;
-  font-family:"Great Vibes",cursive;
-  font-size:clamp(55px,13vw,80px);
-  line-height:1.2;
-}
-h1{
-  margin:0;
-  color:#a98243;
-  font-size:clamp(52px,13vw,78px);
-  font-weight:500;
-  line-height:1.1;
-}
-.gold-divider{
-  margin:22px auto;
-  color:var(--gold);
-  font-size:28px;
-}
-.intro{
-  max-width:370px;
-  margin:auto;
-  font-size:21px;
-  line-height:1.5;
-}
-.date{
-  margin:28px 0 0;
-  color:var(--dark-gold);
-  font-size:28px;
-  letter-spacing:2px;
-}
-.date-caption{
-  color:#a88a59;
-  font:10px Arial,sans-serif;
-  letter-spacing:3px;
-}
-.music-button{
-  margin-top:22px;
-  padding:11px 17px;
-  border:1px solid var(--gold);
-  border-radius:30px;
-  background:#fffaf2;
-  color:var(--dark-gold);
+.envelope-back {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, #fff8eb, #e6c69c);
 }
 
-/* ДАТА ЖАНА РЕСТОРАН */
-.section{padding:45px 16px}
-.details{
-  background:linear-gradient(160deg,#f4e4c9,#fff9ee);
-}
-.details-image{
-  position:relative;
-  width:min(100%,580px);
-  margin:auto;
-}
-.details-image>img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.details-text{
-  position:absolute;
-  inset:10% 12%;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:8px;
-  text-align:center;
-}
-.details-text .eyebrow{
-  margin:6px 0;
-}
-.details-text h2{
-  margin:8px 0;
-  color:#94703d;
-  font-size:clamp(22px,6vw,38px);
-  font-weight:500;
-}
-.time{
-  margin:10px 0 22px;
-  color:#9e7b43;
-  font-size:30px;
-}
-.details-text h3{
-  margin:5px 0;
-  color:#735832;
-  font-size:clamp(19px,5vw,30px);
+.envelope-letter {
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: 12px;
+  height: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #fffaf1;
+  border: 1px solid #d7b779;
+  color: #79283b;
+  transition: transform .8s ease;
 }
 
-/* ДАРЕК */
-.address{background:#fffaf2}
-.address-card{
-  max-width:500px;
-  margin:auto;
-  padding:35px 24px;
-  text-align:center;
-  border:1px solid #d3b779;
-  outline:1px solid #e7d5af;
-  outline-offset:5px;
-  background:#fffdf8;
-}
-.address-card h2{
-  margin:0;
-  color:#9d7a43;
-  font-size:42px;
-  font-weight:500;
-}
-.address-text{
-  max-width:360px;
-  margin:0 auto 22px;
-  font-size:21px;
-  line-height:1.5;
-}
-.map-button{
-  display:inline-block;
-  padding:13px 20px;
-  border-radius:3px;
-  background:#b28b4c;
-  color:white;
-  text-decoration:none;
-  font:11px Arial,sans-serif;
-  letter-spacing:1px;
+.envelope-letter span:first-child {
+  font-size: 37px;
+  color: #b38a4e;
 }
 
-/* УЛУТТУК СҮРӨТТӨР */
-.tradition{
-  padding:0;
-  background:#f7ead7;
-  text-align:center;
-}
-.tradition>img{
-  display:block;
-  width:100%;
-  height:auto;
-}
-.tradition>img:not(.gold-frame){
-  max-height:520px;
-  object-fit:contain;
-}
-.closing{padding:30px 18px}
-.closing p{
-  font-size:24px;
-  font-style:italic;
-}
-.closing span{
-  color:#a18555;
-  font:9px Arial,sans-serif;
-  letter-spacing:3px;
-}
-.closing strong{
-  display:block;
-  margin-top:10px;
-  color:#a98243;
-  font:42px "Great Vibes",cursive;
-}
-.gold-frame{
-  max-width:700px;
-  margin:auto;
+.envelope-letter span:last-child {
+  font-size: 15px;
+  letter-spacing: 2px;
 }
 
-/* ТӨМӨНКҮ БӨЛҮК */
-.footer{
-  padding:30px 16px;
-  text-align:center;
-  background:#efe0c7;
-  color:#88683a;
-}
-.footer p{
-  margin:0 0 8px;
-  font:36px "Great Vibes",cursive;
-}
-.footer button{
-  display:block;
-  margin:18px auto 0;
-  padding:10px 16px;
-  border:1px solid var(--gold);
-  background:transparent;
-  color:#88683a;
+.envelope-front {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(145deg, #f7e7d0, #dfbd91);
+  clip-path: polygon(0 0, 50% 55%, 100% 0, 100% 100%, 0 100%);
 }
 
-@keyframes fadeIn{
-  from{opacity:0;transform:translateY(12px)}
-  to{opacity:1;transform:translateY(0)}
+.envelope-flap {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  height: 60%;
+  background: linear-gradient(180deg, #fff2db, #dfbd91);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  transform-origin: top center;
+  transition: transform .65s ease;
+  border-bottom: 1px solid #c59b5c;
 }
 
-@media(max-width:480px){
-  .invitation-card{padding:40px 20px}
-  .section{padding:35px 12px}
-  .details-text .eyebrow{
-    font-size:8px;
-    letter-spacing:1.5px;
+.seal {
+  position: absolute;
+  z-index: 5;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 57px;
+  height: 57px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #79283b;
+  color: #fff0d5;
+  border: 2px solid #d9b979;
+  font-size: 27px;
+  transition: opacity .3s;
+}
+
+.envelope-button.opening .envelope-flap {
+  transform: rotateX(180deg);
+}
+
+.envelope-button.opening .seal {
+  opacity: 0;
+}
+
+.envelope-button.opening .envelope-letter {
+  transform: translateY(-65px);
+}
+
+.hint {
+  margin-top: 28px;
+  font: 13px Arial, sans-serif;
+  color: #86694f;
+}
+
+/* ЧАКЫРУУ САЙТЫ */
+.invitation {
+  display: none;
+  min-height: 100vh;
+  padding: 30px 20px 65px;
+  background: linear-gradient(#fffaf3, #f0ddc7);
+}
+
+.invitation.visible {
+  display: block;
+  animation: appear .9s ease both;
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
   }
-  .details-text .time{
-    margin:5px 0 10px;
-    font-size:22px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  .details-text h2{font-size:clamp(18px,5vw,28px)}
-  .details-text h3{font-size:clamp(16px,4.5vw,23px)}
-  .address-text{font-size:19px}
 }
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  #invitation{animation:none}
+
+.card {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  text-align: center;
+  background: #fffaf4;
+  border: 1px solid #c59b5c;
+  outline: 1px solid #c59b5c66;
+  outline-offset: 5px;
+}
+
+.ornament {
+  color: #c59b5c;
+  font-size: 27px;
+  letter-spacing: 5px;
+  margin: 12px 0;
+}
+
+.card h1 {
+  color: #79283b;
+  font-size: clamp(43px, 10vw, 68px);
+  font-weight: normal;
+  margin: 15px 0 8px;
+}
+
+.card h2 {
+  color: #8b6746;
+  font-weight: normal;
+  font-size: clamp(22px, 5vw, 30px);
+  margin: 10px 0 25px;
+}
+
+.intro {
+  font-size: 17px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin: 20px auto;
+}
+
+.photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 700px;
+  object-fit: contain;
+  margin: 25px auto;
+  background: #f2e5d5;
+}
+
+.photo-error {
+  display: none;
+  padding: 14px;
+  color: #79283b;
+  font: 13px Arial, sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.details {
+  margin: 28px 0;
+  padding: 20px 5px;
+  border-top: 1px solid #d7bc91;
+  border-bottom: 1px solid #d7bc91;
+  font: 16px/2 Arial, sans-serif;
+  text-align: left;
+}
+
+.details strong {
+  color: #79283b;
+}
+
+.footer-text {
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+/* МУЗЫКА */
+.music-button {
+  position: fixed;
+  right: 15px;
+  bottom: 18px;
+  z-index: 20;
+  padding: 13px 18px;
+  border: 1px solid #d5b477;
+  border-radius: 30px;
+  background: #79283b;
+  color: white;
+  box-shadow: 0 5px 20px #3b292533;
+  cursor: pointer;
+  font: 14px Arial, sans-serif;
+}
+
+@media (max-width: 380px) {
+  .envelope-button {
+    height: 195px;
+  }
+
+  .card {
+    padding: 25px 14px;
+  }
+
+  .intro {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- МУЗЫКА -->
-<audio id="music" loop preload="auto">
-  <source src="assets/bek-borbiev-60-zhash.mp3" type="audio/mpeg">
-</audio>
+<!-- БИРИНЧИ БЕТ: КОНВЕРТ -->
+<section class="cover" id="cover">
+  <div class="cover-content">
+    <div class="eyebrow">Сизге өзгөчө чакыруу</div>
 
-<!-- БИРИНЧИ ЭКРАН: КОНВЕРТ -->
-<section id="envelopeScreen" class="envelope-screen">
-  <button id="openButton" class="envelope-button"
-    aria-label="Чакыруу конвертин ачуу">
-    <img src="assets/envelope.jpg"
-      alt="Алтын мөөрү бар чакыруу конверти">
-    <span class="open-label">ЧАКЫРУУНУ АЧУУ</span>
-  </button>
-  <p class="envelope-note">Сиз үчүн атайын чакыруу</p>
+    <h1 class="cover-title">Урматтуу коноктор!</h1>
+    <p class="cover-subtitle">Сиздерди майрамыбызга чакырабыз</p>
+
+    <button
+      class="envelope-button"
+      id="openInvite"
+      type="button"
+      aria-label="Чакыруу конвертин ачуу"
+    >
+      <span class="envelope-back"></span>
+
+      <span class="envelope-letter">
+        <span>❦</span>
+        <span>ЧАКЫРУУ КАТ</span>
+      </span>
+
+      <span class="envelope-front"></span>
+      <span class="envelope-flap"></span>
+      <span class="seal">❦</span>
+    </button>
+
+    <p class="hint">Конвертти басып, чакырууну ачыңыз ♡</p>
+  </div>
 </section>
 
-<!-- НЕГИЗГИ САЙТ -->
-<main id="invitation" hidden>
+<!-- ЭКИНЧИ БЕТ: ТОЙГО ЧАКЫРУУ -->
+<section class="invitation" id="invitation">
+  <div class="card">
 
-  <!-- БАШКЫ ЧАКЫРУУ -->
-  <section class="hero">
-    <div class="invitation-card">
-      <p class="eyebrow">САЛТАНАТТУУ ЧАКЫРУУ</p>
+    <div class="ornament">✦ ❦ ✦</div>
 
-      <p class="name">Кымбат</p>
-      <h1>60 жаш</h1>
+    <p class="eyebrow">Урматтуу коноктор!</p>
 
-      <div class="gold-divider">✦</div>
+    <h1>Кымбат</h1>
+    <h2>60 жаш мааракеси</h2>
 
-      <p class="intro">
-        Сизди өзгөчө күнүмдүн кубанычын бөлүшүүгө
-        жана салтанаттуу кечебиздин сыйлуу коногу
-        болууга чакырам.
-      </p>
+    <p class="intro">
+      Сиздерди өмүрдүн эң сонун белеги болгон
+      60 жаш мааракебизге арналган кубанычтуу
+      кечебизге чын жүрөктөн чакырабыз.
+      Сиздердин катышууңуздар биз үчүн чоң сыймык!
+    </p>
 
-      <p class="date">16 · 11 · 2026</p>
-      <p class="date-caption">НОЯБРЬ · 2026</p>
-
-      <button id="musicButton" class="music-button">
-        ♫ Музыканы өчүрүү
-      </button>
-    </div>
-  </section>
-
-  <!-- ТОЙДУН МААЛЫМАТЫ -->
-  <section class="details section">
-    <div class="details-image">
-      <img src="assets/details-frame.jpg"
-        alt="Алтын оймо-чиймелүү алкак">
-
-      <div class="details-text">
-        <p class="eyebrow">МААРАКЕБИЗДИН КҮНҮ</p>
-        <h2>16-ноябрь, 2026-жыл</h2>
-        <p class="time">Саат 16:00</p>
-
-        <p class="eyebrow">ӨТКӨРҮЛҮҮЧҮ ЖЕРИ</p>
-        <h3>«Алтын Арашан» рестораны</h3>
-        <p>Бишкек шаары</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- РЕСТОРАНДЫН ДАРЕГИ -->
-  <section class="address section">
-    <div class="address-card">
-      <p class="eyebrow">СИЗДИ КҮТӨБҮЗ</p>
-      <h2>Дареги</h2>
-      <div class="gold-divider">✧</div>
-
-      <p class="address-text">
-        7-Апрель көчөсү, Алматинская көчөсүнөн
-        Ахунбаев көчөсүндөгү айланма жолго жетпей,
-        оң тарапта.
-      </p>
-
-      <a class="map-button"
-        href="https://www.google.com/maps/search/?api=1&query=Алтын+Арашан+ресторан+Бишкек"
-        target="_blank" rel="noopener">
-        Картадан көрүү ↗
-      </a>
-    </div>
-  </section>
-
-  <!-- СЕН ЖҮКТӨГӨН УЛУТТУК СҮРӨТТӨР -->
-  <section class="tradition section">
-    <img src="assets/yurt.jpg"
-      alt="Кыргыздын улуттук жасалгалары">
-
-    <div class="closing">
-      <p>Сиздин келишиңиз — биз үчүн чоң сыймык!</p>
-      <span>ЫРААЗЫЧЫЛЫК МЕНЕН</span>
-      <strong>Кымбат</strong>
+    <!-- БИРИНЧИ СҮРӨТ -->
+    <img
+      class="photo"
+      src="./IMG_1730.jpeg"
+      alt="Кымбаттын сүрөтү"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+    >
+    <div class="photo-error">
+      Сүрөт табылган жок: IMG_1730.jpeg
     </div>
 
-    <img src="assets/tradition.jpg"
-      alt="Кыргыздын салттуу көрүнүшү">
+    <!-- МАЙРАМДЫН МААЛЫМАТЫ -->
+    <div class="details">
+      <div>📅 <strong>Күнү:</strong> 16-ноябрь, 2026-жыл</div>
+      <div>🕓 <strong>Убактысы:</strong> 16:00</div>
+      <div>📍 <strong>Ресторан:</strong> «Алтын Арашан»</div>
+      <div> <strong>Дареги:</strong> 7-А</div>
+    </div>
 
-    <img class="gold-frame"
-      src="assets/gold-frame.jpg"
-      alt="Алтын түстөгү кооз алкак">
-  </section>
+    <!-- ЭКИНЧИ СҮРӨТ -->
+    <img
+      class="photo"
+      src="./IMG_1737.png"
+      alt="Мааракеге чакыруу сүрөтү"
+      onerror="this.style.display='none';this.nextElementSibling.style.display='block'"
+    >
+    <div class="photo-error">
+      Сүрөт табылган жок: IMG_1737.png
+    </div>
 
-  <!-- САЙТТЫН АЯГЫ -->
-  <footer class="footer">
-    <p>Кымбат 60 жаш</p>
-    <span>16.11.2026 · 16:00</span>
-    <button id="topButton">Башына кайтуу ↑</button>
-  </footer>
+    <div class="ornament">❦</div>
 
-</main>
+    <p class="footer-text">
+      Сиздерди чыдамсыздык менен күтөбүз!<br><br>
+      <strong>Урматтоо менен,<br>Кымбаттын үй-бүлөсү</strong>
+    </p>
+
+  </div>
+</section>
+
+<!-- МУЗЫКА -->
+<audio id="bgMusic" preload="auto" loop>
+  <source src="./bek-borbiev-60-zhash.mp3" type="audio/mpeg">
+</audio>
+
+<button class="music-button" id="musicButton" type="button" hidden>
+  ♫ Музыканы иштетүү
+</button>
 
 <script>
-const envelopeScreen = document.getElementById("envelopeScreen");
-const openButton = document.getElementById("openButton");
+const openButton = document.getElementById("openInvite");
+const cover = document.getElementById("cover");
 const invitation = document.getElementById("invitation");
-const music = document.getElementById("music");
+const music = document.getElementById("bgMusic");
 const musicButton = document.getElementById("musicButton");
-const topButton = document.getElementById("topButton");
 
-// КОНВЕРТТИ АЧУУ
-openButton.addEventListener("click", async () => {
-  envelopeScreen.hidden = true;
-  invitation.hidden = false;
+let opened = false;
 
-  window.scrollTo({top: 0, behavior: "instant"});
-
-  // Музыка колдонуучунун басуусунан кийин башталат
+async function playMusic() {
   try {
     await music.play();
-    updateMusicButton();
+    musicButton.textContent = "♫ Музыканы токтотуу";
   } catch (error) {
-    musicButton.textContent = "♫ Музыканы күйгүзүү";
+    musicButton.textContent = "♫ Музыканы иштетүү";
   }
-});
-
-// МУЗЫКАНЫ КҮЙГҮЗҮҮ ЖАНА ӨЧҮРҮҮ
-musicButton.addEventListener("click", async () => {
-  if (music.paused) {
-    try {
-      await music.play();
-      updateMusicButton();
-    } catch (error) {
-      musicButton.textContent = "Музыканы кайра басыңыз";
-    }
-  } else {
-    music.pause();
-    updateMusicButton();
-  }
-});
-
-function updateMusicButton() {
-  musicButton.textContent = music.paused
-    ? "♫ Музыканы күйгүзүү"
-    : "♫ Музыканы өчүрүү";
 }
 
-// БАРАКТЫН БАШЫНА КАЙТУУ
-topButton.addEventListener("click", () => {
-  window.scrollTo({top: 0, behavior: "smooth"});
+openButton.addEventListener("click", async function () {
+  if (opened) return;
+  opened = true;
+
+  openButton.classList.add("opening");
+
+  // Музыканы колдонуучу баскан учурда баштайбыз.
+  const musicPromise = playMusic();
+
+  setTimeout(function () {
+    cover.style.display = "none";
+    invitation.classList.add("visible");
+    musicButton.hidden = false;
+    window.scrollTo(0, 0);
+  }, 750);
+
+  await musicPromise;
+});
+
+musicButton.addEventListener("click", async function () {
+  if (!music.paused) {
+    music.pause();
+    musicButton.textContent = "♫ Музыканы иштетүү";
+  } else {
+    await playMusic();
+  }
+});
+
+music.addEventListener("error", function () {
+  musicButton.textContent = "♫ Музыканы иштетүү";
 });
 </script>
 
 </body>
 </html>
+
+
